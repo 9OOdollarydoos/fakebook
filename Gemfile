@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Project specific gems
 gem 'devise'
+gem "bulma-rails", "~> 0.9.1"

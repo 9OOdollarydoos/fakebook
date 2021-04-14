@@ -1,6 +1,4 @@
 class Post < ApplicationRecord
-# Post data:
-# title: string
-# body: text area
+# Post attributes: title, body
 
 end

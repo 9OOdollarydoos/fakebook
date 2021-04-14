@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #User data:
-  # username: string
-  # name: string
-  # email: string (add validation)
-  # encrypted password
+  #User attributes: username, name, email, encrypted password
+
+  has_many :friendships, foreign_key: :user_id, class_name: 'Friendship'
+  has_many :friends, through: :friendships
+
 end

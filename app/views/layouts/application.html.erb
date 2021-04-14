@@ -11,8 +11,35 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <nav class="navbar is-info">
+      <div class="navbar-brand">
+        <%= link_to image_tag("logo.png", size: "40x80"), root_path, :class => "navbar-item" %>
+        <div class="navbar-item"
+          <h1 class="title is-strong">FAKEBOOK</h1>
+        </div>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-start"> <!--left side of navbar -->
+            <a class="navbar-item">Home</a>
+        </div>
+
+        <div class="navbar-end"> <!--right side of navbar -->
+            <a class="navbar-item">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <% if notice %>
+    <div class="notification is-success">
+      <%= notice %>
+    <% end %>
+    </div>
+    <% if alert %>
+    <div class="notification is-danger">
+      <%= alert %>
+    </div>
+    <% end %>
 
 
     <%= yield %>
