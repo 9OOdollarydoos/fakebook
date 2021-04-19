@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show
     @user = User.find(current_user.id)
+    @users = User.all
     @posts = @user.posts.all.order("created_at DESC")
   end
 

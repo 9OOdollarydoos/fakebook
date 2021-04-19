@@ -1,9 +1,6 @@
 <article class="media">
   <figure class="media-left">
-    <p id="display-pic" class="image is-64x64">
-      DR
-      <!--<img class="is-rounded" src="icon">-->
-    </p>
+      <%= image_tag("default_avatar.png", size: "40x80", class: "image is-64x64") %>
   </figure>
   <div class="media-content">
     <%= form_for @post do |f| %>

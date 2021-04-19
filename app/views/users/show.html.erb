@@ -13,10 +13,10 @@
   </div>
 
   <!--user's posts in center-->
-  <div class="column is-two-thirds">
+  <div class="column is-three-fifths">
     <section class="section"> 
       <div class="container">
-        <h2 class="title">Your Posts</h2>
+        <h2 class="title"><%= current_user.username %>'s Posts</h2>
         <%= render "posts/post_media" %>
       </div>
     </section>
@@ -36,7 +36,7 @@
       <div class="container">
         <div class="content">
           <h1>Friend Requests</h1>
-          <p>Placeholder</p>
+          <%= render "friend_requests" %>
         </div>
       </div>
     </section>
@@ -44,7 +44,7 @@
       <div class="container">
         <div class="content">
           <h1>Find Friends</h1>
-          <p>Placeholder</p>
+          <%= render "user_list" %>
         </div>
       </div>
     </section>
