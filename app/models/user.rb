@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   #User attributes: username, name, email, encrypted password
 
-  has_many :friendships, foreign_key: :user_id #, class_name: 'Friendship'
+  has_many :friendships, foreign_key: :user_id, class_name: 'Friendship'
   has_many :friends, through: :friendships
 
   has_many :sent_friend_requests, foreign_key: :requesting_friend_id, class_name: 'Request'

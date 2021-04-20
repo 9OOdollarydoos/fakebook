@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :users, only: [:show, :index] 
-  resources :requests, only: [:new, :create, :show] 
+  resources :requests, only: [:new, :create, :show, :destroy] 
+  resources :friendships, only: [:new, :create, :show, :destroy]
 
   root to: "posts#index"
 

@@ -4,10 +4,17 @@ class RequestsController < ApplicationController
     @friend_request = Request.new(requesting_friend_id: current_user.id, requested_friend_id: params[:invitee])
 
     if @friend_request.save
-        redirect_to root_path, notice: "Friend request sent!"
+        redirect_to user_path(current_user), notice: "Friend request sent!"
     else
-        redirect_to root_path, status: :unprocessable_entity
+        redirect_to user_path(current_user), status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @friend_request = Request.find(params[:id])
+    @friend_request.destroy
+    
+    redirect_to user_path(current_user), notice: "Friend request deleted."
   end
 
   private
