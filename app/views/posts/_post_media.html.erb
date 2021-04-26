@@ -14,16 +14,31 @@
                 <%= post.body %>
               </p>
             </div>
+            <!-- controls for own posts -->
+            <% if post.user == current_user %>
             <nav class="level is-mobile">
               <div class="level-left">
                 <a class="level-item">
-                  link to reply
+                  link to edit
+                </a>
+                <a class="level-item">
+                  link to delete
+                </a>
+              </div>
+            </nav>
+            <!-- controls for other user's posts -->
+            <% else %>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item">
+                  link to comment
                 </a>
                 <a class="level-item">
                   link to like
                 </a>
               </div>
             </nav>
+            <% end %>
           </div>
         </article>
       </div>

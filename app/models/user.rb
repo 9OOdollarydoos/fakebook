@@ -16,5 +16,7 @@ class User < ApplicationRecord
   has_many :requesting_friends, through: :received_friend_requests
 
   has_many :posts
+  has_many :likes
+  has_many :comments
 
 end
