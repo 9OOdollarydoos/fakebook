@@ -9,7 +9,7 @@
           <div class="media-content">
             <div class="content">
               <p>
-                <strong><%= post.title %></strong> <small>@<%= post.user.username %></small> <small>31m</small>
+                <strong><%= post.title %></strong> <small>@<%= post.user.username %></small> <small><% "placeholder for post time" %></small>
                 <br>
                 <%= post.body %>
               </p>
@@ -31,15 +31,29 @@
             <nav class="level is-mobile">
               <div class="level-left">
                 <a class="level-item">
-                  link to comment
+                  <span class="icon is-small"><i class="fa fa-reply"></i></span>
                 </a>
                 <a class="level-item">
-                  link to like
+                  <% if post.likes.find_by(user_id: current_user.id) %>
+                    <%= link_to fa_icon("heart"), like_path(post.likes.find_by(user_id: current_user.id)), method: "delete", class: "icon is-small" %>
+                  <% else %>
+                    <%= link_to fa_icon("heart-o"), likes_path(post_id: post.id), method: "post", class: "icon is-small" %>
+                  <% end %>
                 </a>
               </div>
             </nav>
             <% end %>
           </div>
+          <% unless post.likes.count() == 0 %>
+            <div class="media-right">
+                <span class="icon-text has-text-dark">
+                  <span class="icon">
+                    <i class="fa fa-heart"></i>
+                  </span>
+                  <span><%= post.likes.count() %></span>
+                </span>
+            </div>
+          <% end %>
         </article>
       </div>
     <% end %>
