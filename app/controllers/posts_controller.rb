@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     redirect_to new_user_session_path unless user_signed_in?
 
     @post = Post.new
+    @comment = Comment.new
     @posts = Post.all.order("created_at DESC")
 
   end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :requests, only: [:new, :create, :show, :destroy] 
   resources :friendships, only: [:new, :create, :show, :destroy]
   resources :likes, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 
   root to: "posts#index"
 
