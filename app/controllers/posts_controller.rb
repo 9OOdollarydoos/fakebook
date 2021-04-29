@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    redirect_to new_user_session_path unless user_signed_in?
 
     @post = Post.new
     @comment = Comment.new
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.where(user_id: current_user).or(Post.where(user_id: current_user.friends)).order("created_at DESC")
 
   end
 
