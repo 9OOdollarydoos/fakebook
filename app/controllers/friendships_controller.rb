@@ -10,7 +10,15 @@ class FriendshipsController < ApplicationController
     else
         redirect_to user_path(current_user), status: :unprocessable_entity
     end
+  end
 
+  def destroy
+    @friendship = Friendship.find(params[:id])
+    @friendship_inverse = Friendship.find_by(user_id: @friendship.friend_id)
 
+    @friendship.destroy
+    @friendship_inverse.destroy
+    
+    redirect_to user_path(current_user), notice: "Friend deleted."
   end
 end

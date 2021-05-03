@@ -16,7 +16,7 @@
   <div class="column is-three-fifths">
     <section class="section"> 
       <div class="container">
-        <h2 class="title"><%= current_user.username %>'s Posts</h2>
+        <h2 class="title"><%= @user.username %>'s Posts</h2>
         <%= render "posts/post_media" %>
       </div>
     </section>
@@ -25,8 +25,10 @@
   <!--friends bar on right-->
   <div class="column">
     <%= render "friends" %>
-    <%= render "friend_requests" %>
-    <%= render "find_friends" %>
+    <% if @user == current_user %>
+      <%= render "friend_requests" %>
+      <%= render "find_friends" %>
+    <% end %>
   </div>
 
 </div>

@@ -11,7 +11,7 @@
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong><%= post.title %></strong> <small>@<%= post.user.username %></small> <small><% "placeholder for post time" %></small>
+                  <strong><%= post.title %></strong> <small><%= link_to post.user.username, post.user %></small> <small><%= time_ago_in_words(post.created_at) %></small>
                   <br>
                   <%= post.body %>
                 </p>

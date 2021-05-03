@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
     @users = User.all
     @posts = @user.posts.all.order("created_at DESC")
     @comment = Comment.new

@@ -1,9 +1,9 @@
-<% unless current_user.friends.empty? %>
+<% unless @user.friends.empty? %>
   <section class="section"> 
     <div class="container">
       <div class="content">
         <h1>Friends</h1>
-            <% current_user.friends.each do |friend| %>
+            <% @user.friends.each do |friend| %>
                 <div class="level">
                   <!-- Left side -->
                   <div class="level-left">
