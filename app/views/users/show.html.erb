@@ -5,8 +5,19 @@
     <section class="section"> 
       <div class="container">
         <div class="content">
-          <h1>Profile</h1>
-          <p>Placeholder - stuff about name, username etc.</p>
+          <% if @user.profile.blank? %>
+            <p><%=@user.username%> hasn't created a profile yet</p>
+            <%= link_to("create profile", new_profile_path) if @user == current_user %>
+          <% else %>
+            <h1>Profile</h1>
+            <%= image_tag url_for(@user.profile.avatar) %>
+            <p><strong>About me</strong></p>
+            <p><%= @user.profile.intro %></p>
+            <p><strong>Location</strong></p>
+            <p><%= @user.profile.location %></p>
+
+            <%= link_to("update profile", edit_profile_path) if @user == current_user %>
+          <% end %>
         </div>
       </div>
     </section>
@@ -16,7 +27,7 @@
   <div class="column is-three-fifths">
     <section class="section"> 
       <div class="container">
-        <h2 class="title"><%= @user.username %>'s Posts</h2>
+        <%= render "posts/new_post_form" if @user == current_user %>
         <%= render "posts/post_media" %>
       </div>
     </section>

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @users = User.all
+    @post = Post.new
     @posts = @user.posts.all.order("created_at DESC")
     @comment = Comment.new
   end

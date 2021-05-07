@@ -24,7 +24,7 @@ It is a basic clone of some of the main facebook functionality.
 [X] Treat the Posts Index page like the real Facebook’s “Timeline” feature – show all the recent posts from the current user and users she is friends with.
 [ ] Users can create a Profile with a Photo.
 [ ] The User Show page contains their Profile information, photo, and Posts.
-[ ] The Users Index page lists all users and buttons for sending Friend Requests to those who are not already friends or don’t already have a pending request.
+[X] The Users Index page lists all users and buttons for sending Friend Requests to those who are not already friends or don’t already have a pending request.
 [ ] Sign in should use OmniAuth to allow a user to sign in with their real Facebook account. 
 [ ] Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
 [ ] Deploy your App to Heroku.
