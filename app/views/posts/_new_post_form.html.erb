@@ -5,7 +5,9 @@
       <div class="box">
         <article class="media">
           <figure class="media-left">
-              <%= image_tag("default_avatar.png", size: "40x80", class: "image is-64x64") %>
+              <p class="image is-square is-64x64">
+                <%= image_tag profile_pic(current_user), class: "is-rounded" %>
+              </p>
           </figure>
           <div class="media-content">
             <%= form_for @post do |f| %>

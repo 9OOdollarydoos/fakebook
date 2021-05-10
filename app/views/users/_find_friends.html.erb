@@ -12,10 +12,12 @@
             <!-- Left side -->
             <div class="level-left">
               <div class="level-item">
-                <%= image_tag("default_avatar.png", size: "40x80") %>
+                <p class="image is-square is-48x48">
+                  <%= image_tag(profile_pic(user), class: "is-rounded") %>
+                </p>
               </div>
               <div class="level-item">
-                <p><strong><%= user.username %></strong></p>
+                <p><strong><%= link_to user.username, user %></strong></p>
               </div>
             </div>
 

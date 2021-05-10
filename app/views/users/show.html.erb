@@ -5,12 +5,14 @@
     <section class="section"> 
       <div class="container">
         <div class="content">
+          <h1>Profile</h1>
           <% if @user.profile.blank? %>
             <p><%=@user.username%> hasn't created a profile yet</p>
             <%= link_to("create profile", new_profile_path) if @user == current_user %>
           <% else %>
-            <h1>Profile</h1>
-            <%= image_tag url_for(@user.profile.avatar) %>
+            <figure class="image is-256x256">
+              <%= image_tag url_for(@user.profile.avatar) %>
+            </figure>
             <p><strong>About me</strong></p>
             <p><%= @user.profile.intro %></p>
             <p><strong>Location</strong></p>

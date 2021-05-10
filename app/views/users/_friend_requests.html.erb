@@ -10,10 +10,12 @@
                   <!-- Left side -->
                   <div class="level-left">
                     <div class="level-item">
-                      <%= image_tag("default_avatar.png", size: "40x80") %>
+                      <p class="image is-square is-48x48">
+                        <%= image_tag(profile_pic(request.requested_friend), class: "is-rounded") %>
+                      </p>
                     </div>
                     <div class="level-item">
-                      <p><strong><%= request.requested_friend.username %></strong></p>
+                      <p><strong><%= link_to request.requested_friend.username, request.requested_friend %></strong></p>
                     </div>
                   </div>
                   <!-- Right side -->
@@ -32,10 +34,12 @@
                   <!-- Left side -->
                   <div class="level-left">
                     <div class="level-item">
-                      <%= image_tag("default_avatar.png", size: "40x80") %>
+                      <p class="image is-square is-48x48">
+                        <%= image_tag(profile_pic(request.requesting_friend), class: "is-rounded") %>
+                      </p>
                     </div>
                     <div class="level-item">
-                      <p><strong><%= request.requesting_friend.username %></strong></p>
+                      <p><strong><%= link_to request.requesting_friend.username, request.requesting_friend %></strong></p>
                     </div>
                   </div>
 
