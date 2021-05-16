@@ -27,10 +27,13 @@
 
   <!--user's posts in center-->
   <div class="column is-three-fifths">
-    <section class="section"> 
-      <div class="container">
-        <%= render "posts/new_post_form" if @user == current_user %>
-        <%= render "posts/post_media" %>
+    <%= render "posts/new_post_form" if @user == current_user %>
+    <section class="section">
+      <div class="content">
+        <h1><%= @user.username %>'s Posts</h1>
+        <% @posts.each do |post| %>
+          <%= render "posts/post_media", post: post %>
+        <% end %>
       </div>
     </section>
   </div>

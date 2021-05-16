@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_010103) do
+ActiveRecord::Schema.define(version: 2021_05_13_043957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,12 @@ ActiveRecord::Schema.define(version: 2021_05_07_010103) do
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
+  create_table "image_posts", force: :cascade do |t|
+    t.string "img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "post_id"
@@ -77,6 +83,9 @@ ActiveRecord::Schema.define(version: 2021_05_07_010103) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.string "postable_type"
+    t.bigint "postable_id"
+    t.index ["postable_type", "postable_id"], name: "index_posts_on_postable"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -96,6 +105,12 @@ ActiveRecord::Schema.define(version: 2021_05_07_010103) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["requested_friend_id"], name: "index_requests_on_requested_friend_id"
     t.index ["requesting_friend_id"], name: "index_requests_on_requesting_friend_id"
+  end
+
+  create_table "text_posts", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

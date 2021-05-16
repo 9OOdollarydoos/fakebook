@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :posts
+  resources :text_posts
   resources :users, only: [:show, :index] 
   resources :requests, only: [:new, :create, :show, :destroy] 
   resources :friendships, only: [:new, :create, :show, :destroy]

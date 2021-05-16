@@ -10,12 +10,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @text_post = TextPost.new(body: post_params[:body])
+    @post = @text_post.build_post(
+      title: post_params[:title],
+      body: post_params[:body], #cant be null yet
+      user_id: current_user.id,
+    )
 
-    if @post.save
+    if @post.save && @text_post.save
         redirect_to root_path, notice: "Post created sucessfully!"
     else
-        render :index, status: :unprocessable_entity
+        render root_path, alert: :unprocessable_entity
     end
   end
 

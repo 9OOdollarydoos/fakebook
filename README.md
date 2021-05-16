@@ -42,3 +42,4 @@ It is a basic clone of some of the main facebook functionality.
 -- Notifications works but not that well
 
 #To Do
+-- Implement editting and deleting posts
