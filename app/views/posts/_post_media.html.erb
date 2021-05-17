@@ -10,23 +10,21 @@
         <p>
           <strong><%= post.title %></strong> <small><%= link_to post.user.username, post.user %></small> <small><%= time_ago_in_words(post.created_at) %> ago</small>
           <br>
-          <%= post.postable.body %>
+          <% if post.postable.class == ImagePost %>
+            <figure class="image">
+              <% if post.postable.img_url.present? %>
+                <%= image_tag post.postable.img_url %>
+              <% else %>
+                <%= image_tag post.postable.image %>
+              <% end %>
+            </figure>
+          <% else %>
+            <%= post.postable.body %>
+          <% end %>
         </p>
       </div>
       <!-- controls for own posts -->
-      <% if post.user == current_user %>
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <a class="level-item">
-            link to edit
-          </a>
-          <a class="level-item">
-            link to delete
-          </a>
-        </div>
-      </nav>
-      <!-- controls for other user's posts -->
-      <% else %>
+      <% if post.user != current_user %>
       <nav class="level is-mobile">
         <div class="level-left">
           <a class="level-item">
@@ -57,5 +55,10 @@
           </span>
       </div>
     <% end %>
+    <% if post.user == current_user %>
+    <div class="media-right">
+        <%= link_to fa_icon("trash"), post_path(post), method: "delete", class: "icon is-small" %>
+    </div>
+  <% end %>
   </article>
 </div>

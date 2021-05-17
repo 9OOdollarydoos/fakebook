@@ -7,7 +7,7 @@
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>@<%= comment.user.username %></strong><br>
+        <strong><%= link_to "@" + comment.user.username, comment.user %></strong><br>
         <%= comment.body %>   
       </p>
     </div>
