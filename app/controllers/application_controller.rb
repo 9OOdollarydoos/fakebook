@@ -2,12 +2,13 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def profile_pic(user) #returns an img url for the user and provides a default profile pic if none exists
-    if user.nil? || user.profile.blank? #default picture
-      "default_avatar.png"
-    else
+    begin
       url_for(user.profile.avatar)
+    rescue
+      "default_avatar.png"
     end
   end
+
   helper_method :profile_pic
 
   protected

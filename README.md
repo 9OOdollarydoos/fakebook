@@ -9,6 +9,8 @@ It is a basic clone of some of the main facebook functionality.
 -- guard
 -- bulma
 -- fa_icons
+-- omniauth
+-- letter_opener
 
 #Tasks:
 [X] Use PostgreSQL for your database from the beginning (not SQLite3), that way your deployment to Heroku will go much more smoothly. 
@@ -26,7 +28,7 @@ It is a basic clone of some of the main facebook functionality.
 [X] The User Show page contains their Profile information, photo, and Posts.
 [X] The Users Index page lists all users and buttons for sending Friend Requests to those who are not already friends or don’t already have a pending request.
 [X] Sign in should use OmniAuth to allow a user to sign in with their real Facebook account. 
-[ ] Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
+[X] Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
 [ ] Deploy your App to Heroku.
 [ ] Set up the SendGrid add-on and start sending real emails. It’s free for low usage tiers.
 #Extra Credit

@@ -46,6 +46,7 @@ group :development do
   gem "guard"
   gem "guard-rspec", require: false
   gem 'guard-livereload', '~> 2.5', require: false
+  gem "letter_opener", group: :development
 end
 
 group :test do
