@@ -25,15 +25,15 @@ It is a basic clone of some of the main facebook functionality.
 [X] Users can create a Profile with a Photo.
 [X] The User Show page contains their Profile information, photo, and Posts.
 [X] The Users Index page lists all users and buttons for sending Friend Requests to those who are not already friends or don’t already have a pending request.
-[ ] Sign in should use OmniAuth to allow a user to sign in with their real Facebook account. 
+[X] Sign in should use OmniAuth to allow a user to sign in with their real Facebook account. 
 [ ] Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
 [ ] Deploy your App to Heroku.
 [ ] Set up the SendGrid add-on and start sending real emails. It’s free for low usage tiers.
 #Extra Credit
-[ ] Make posts also allow images (either just via a URL or, more complicated, by uploading one).
+[X] Make posts also allow images (either just via a URL or, more complicated, by uploading one).
 [X] Use the Active Storage to allow users to upload a photo to their profile.
-[ ] Make your post able to be either a text OR a photo by using a polymorphic association (so users can still like or comment on it while being none-the-wiser).
-[ ] Style it up nicely! We’ll dive into HTML/CSS in the next course.
+[X] Make your post able to be either a text OR a photo by using a polymorphic association (so users can still like or comment on it while being none-the-wiser).
+[X] Style it up nicely! We’ll dive into HTML/CSS in the next course.
 
 
 #Notes:
@@ -42,4 +42,7 @@ It is a basic clone of some of the main facebook functionality.
 -- Notifications works but not that well
 
 #To Do
--- Implement editting and deleting posts
+-- Implement deleting posts
+-- consider removing username as its not used by Facebook
+-- get the avatar to match facebook when using omniauth
+-- optimise queries when loading post.users etc.
