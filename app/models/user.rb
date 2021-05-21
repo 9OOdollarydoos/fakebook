@@ -37,7 +37,7 @@ class User < ApplicationRecord
 
   has_one :profile
 
-  after_create :send_welcome_email
+  #after_create :send_welcome_email #temporarily disabled for heroku deployment
 
   def send_welcome_email
     UserMailer.with(user: self).welcome_email.deliver_now
