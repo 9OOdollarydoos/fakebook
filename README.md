@@ -29,7 +29,7 @@ It is a basic clone of some of the main facebook functionality.
 [X] The Users Index page lists all users and buttons for sending Friend Requests to those who are not already friends or don’t already have a pending request.
 [X] Sign in should use OmniAuth to allow a user to sign in with their real Facebook account. 
 [X] Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
-[ ] Deploy your App to Heroku.
+[X] Deploy your App to Heroku.
 [ ] Set up the SendGrid add-on and start sending real emails. It’s free for low usage tiers.
 #Extra Credit
 [X] Make posts also allow images (either just via a URL or, more complicated, by uploading one).
@@ -42,6 +42,7 @@ It is a basic clone of some of the main facebook functionality.
 -- I need to get better at TDD. Testing just done by hand
 -- Bulma looks nice but can be a pain.
 -- Notifications works but not that well
+-- Cloud storage and sendgrid not added
 
 #To Do
 -- Implement deleting posts
